@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Chat History</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+        }
+        h1 {
+            text-align: center;
+            color: #555;
+        }
+        .history {
+            background-color: #e9ecef;
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            overflow-wrap: break-word; /* Додаємо автоматичний перенос тексту */
+            word-wrap: break-word; /* Додаємо автоматичний перенос тексту */
+            word-break: break-word; /* Додаємо автоматичний перенос тексту */
+        }
+        .history pre {
+            white-space: pre-wrap; /* Додаємо автоматичний перенос тексту */
+            overflow-wrap: break-word; /* Додаємо автоматичний перенос тексту */
+            word-wrap: break-word; /* Додаємо автоматичний перенос тексту */
+            word-break: break-word; /* Додаємо автоматичний перенос тексту */
+        }
+        .chat-link {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .chat-link a {
+            color: #007bff;
+            text-decoration: none;
+        }
+        .chat-link a:hover {
+            text-decoration: underline;
+        }
+        .delete-button {
+            text-align: center;
+        }
+        .delete-button button {
+            padding: 10px 20px;
+            border: none;
+            background-color: #dc3545;
+            color: #fff;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .delete-button button:hover {
+            background-color: #c82333;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Chat History</h1>
+        <div class="history">
+            <pre>{{ history }}</pre>
+        </div>
+        <div class="history-link">
+            <a href="/">Back to Chat</a> | <a href="/chat_with_context">Chat with Context</a>
+        </div>
+        <div class="delete-button">
+            <form action="/delete_history" method="post">
+                <button type="submit">Delete History</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
