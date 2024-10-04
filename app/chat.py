@@ -40,7 +40,7 @@ def get_session_history(session_id: str):
 
 
 session_id = "bcd"
-chain = prompt_template | llm | memory
+chain = prompt_template | llm 
 chain_with_history = RunnableWithMessageHistory(
     chain,
     get_session_history,
