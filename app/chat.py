@@ -32,11 +32,15 @@ memory = ConversationSummaryBufferMemory(llm=llm, max_token_limit=1000, memory_k
 store = {}
 
 
-def get_session_history(session_id: str):
-
+max_messages = 20  
+def get_session_history(session_id: str) -> BaseChatMessageHistory:
     if session_id not in store:
         store[session_id] = ChatMessageHistory()
-    return store[session_id]
+    history = store[session_id]
+    if len(history.messages) > max_messages:
+        history.messages = history.messages[-max_messages:]
+    
+    return history
 
 
 session_id = "bcd"
