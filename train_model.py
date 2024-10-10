@@ -93,6 +93,11 @@ avg_val_loss = val_loss / len(val_dataloader)
 print(f'Validation loss: {avg_val_loss:.4f}')    
 
 
+LOCAL_MODEL_DIR = r'.\model\mountain_ner_bert'
+model.save_pretrained(LOCAL_MODEL_DIR)
+tokenizer.save_pretrained(LOCAL_MODEL_DIR)
+
+
 # Analyze model performance
 print("\nModel performance analysis:")
 
