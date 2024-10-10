@@ -19,8 +19,7 @@ search_mountains/
 ├── README.md
 ├── data/
 │   └── mountain_sentences.csv
-├── model/
-│   ├── mountain_ner_bert/
+
 ```
 
 ## Setup
@@ -45,7 +44,8 @@ search_mountains/
 If you want to use the pre-trained model and tokenizer, follow these steps:
 
 1. **Load the pre-trained model and tokenizer**:
-   - The model and tokenizer are already saved in the `model/mountain_ner_bert/` directory.
+   - Link: Model Weights on Google Drive
+   - Download and place  in the model/mountain_ner_bert directory.
 
 2. **Make predictions**:
    - Use the `inference.py` script to make predictions on new sentences.
