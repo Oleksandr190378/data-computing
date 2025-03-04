@@ -61,6 +61,12 @@ def calculate_monthly_metrics(combined_df):
     # Створити новий стовпець "Monthly Clicks" як суму значень стовпців "Clicks" в кожному рядку
     combined_df['Monthly Clicks'] = combined_df[clicks_columns].sum(axis=1)
     
+    # Створити новий стовпець "Average Orders" як середнє значення стовпців "Orders" в кожному рядку
+    combined_df['Average_Orders'] = combined_df[orders_columns].mean(axis=1).round().astype(int)
+    
+    # Створити новий стовпець "Average Clicks" як середнє значення стовпців "Clicks" в кожному рядку
+    combined_df['Average_Clicks'] = combined_df[clicks_columns].mean(axis=1).round().astype(int)
+
     return combined_df
 
 

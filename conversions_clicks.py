@@ -41,11 +41,11 @@ def find_conversions(row: pd.Series, prev_avg_orders: float = 1) -> Tuple[Dict[s
     
     # Calculate minimum order threshold based on previous month's data
     if row['SFR'] <= 5000:
-        min_order_threshold = max(1, prev_avg_orders * 0.9)
-    elif row['SFR'] <= 10000 and row['SFR'] > 5000:
         min_order_threshold = max(1, prev_avg_orders * 0.85)
+    elif row['SFR'] <= 10000 and row['SFR'] > 5000:
+        min_order_threshold = max(1, prev_avg_orders * 0.76)
     elif row['SFR'] > 10000 and row['SFR'] <= 40000:
-        min_order_threshold = max(1, prev_avg_orders * 0.8)
+        min_order_threshold = max(1, prev_avg_orders * 0.73)
     else:
         min_order_threshold = max(1, prev_avg_orders * 0.7)
     # Default values
